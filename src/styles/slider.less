@@ -1,8 +1,9 @@
-@numOfSlides: 4;
+@numOfSlides: 3;
+@animation: cubic-bezier(.17,.67,.35,.89);
 .slider {
 	position: relative;
 	input[type=radio] {
-		// display: none;
+		display: none;
 		// &:checked {
 		// 	& ~ .slider-wrapper {
 
@@ -13,12 +14,18 @@
 		position: absolute;
 		width: 25px;
 		height: 35px;
+		top: 50%;
+		taransform: trnaslateY(-50%);
+		opacity: 0;
+		transform: translate3d(0,-100%, 0);
+		will-change: opacity, transform;
+		transition: .3s @animation;
 		&.right {
-			right: 0;
+			right: 10px;
 			background: url('@{img-path}arrow-right.svg') 50% 50% no-repeat;
 		}
 		&.left {
-			left: 0;
+			left: 10px;
 			background: url('@{img-path}arrow-left.svg') 50% 50% no-repeat;
 		}
 		label[for] {
@@ -37,23 +44,63 @@
 		width: 100%;
 		position: relative;
 		overflow: hidden;
+		&:hover {
+			.slider-controls {
+				opacity: 1;
+				transform: translate3d(0,-50%,0);
+			}
+		}
 		.slide {
-			transition: all .3s ease-in-out;
-			will-change: transform;
+			transition: all .3s @animation;
+			will-change: transform,opacity;
 			position: absolute;
 			width: 100%;
 			top: 0;
 			left: 0;
-			transform: translate3d(-100%, 0,0);
+			height: inherit;
+			// transform: translate3d(-100%, 0,0);
+			opacity: 0;
+			// background: attr(data-img);
 			img {
 				display: block;
 				width: 100%;
 				height: auto;
 				min-width: 100%;
+				min-height: 100%;
 			}
 			.caption {
 				position: absolute;
-
+				opacity: 0;
+				
+				will-change: opacity, transform;
+				transition: 1s @animation;
+				top: 50%;
+				max-width: 50%;
+				&.left {
+					text-align: left;
+					left: 0;
+					transform: translate3d(-150%,-50%,0);
+					padding-left: 50px;
+				}
+				&.right {
+					text-align: right;
+					padding-right: 50px;
+					transform: translate3d(150%,-50%,0);
+					right: 0;
+				}
+				&.center {
+					text-align: center;
+					left: 0;
+					transform: translate3d(0,150%,0);
+					right: 0;
+					margin: auto;
+				}
+				h1 {
+					color: #fff;
+					margin: 0;
+					font: bold 28px @font-main;
+					text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+				}
 			}
 		}
 	}
@@ -62,18 +109,23 @@
 .check(@slides) when (@slides > 0) {
 	input[type=radio]:nth-of-type(@{slides}):checked ~ .slider-wrapper {
 		.slide:nth-of-type(@{slides}) {
-			transform: translate3d(0,0,0);
+			// transform: translate3d(0,0,0);
+			opacity: 1;
+			.caption {
+				opacity: 1;
+				transform: translate3d(0,-50%,0);
+			}
 		}
-	}
 	.slectIndexLeft(@slides);
 	.slectIndexRight(@slides);
+	}
 	.check((@slides - 1));
 }
 
 .slectIndexLeft(@current) when (@current > 1) {
 	@new: @current - 1;
-	.slider-wrapper .slider-controls.left {
-		label {
+	.slider-controls.left {
+		label[for] {
 			z-index: -1;
 			&:nth-of-type(@{new}) {
 				z-index: 10;
@@ -81,9 +133,29 @@
 		}
 	}
 }
+.slectIndexLeft(@current) when (@current = 1) {
+	.slider-controls.left {
+		label[for] {
+			z-index: -1;
+			&:nth-of-type(@{numOfSlides}) {
+				z-index: 10;
+			}
+		}
+	}
+}
+.slectIndexRight(@current) when (@current = @numOfSlides) {
+	.slider-controls.right {
+		label[for] {
+			z-index: -1;
+			&:nth-of-type(1) {
+				z-index: 10;
+			}
+		}
+	}
+}
 .slectIndexRight(@current) when (@current < @numOfSlides) {
 	@new: @current + 1;
-	.slider-wrapper .slider-controls.right {
+	.slider-controls.right {
 		label {
 			z-index: -1;
 			&:nth-of-type(@{new}) {

@@ -3,14 +3,15 @@
 
 header {
 	background: #fff;
-	padding: 36px 0;
+	padding: 30px 0;
 	border-bottom: 3px solid @gray;
 	.clearfix();
 
 	// socials
 
 	.socials {
-
+		// padding-top: 20px;
+		padding-left: 70px;
 		@icon-size: 23px;
 		text-align: right;
 		&>* {
@@ -18,14 +19,16 @@ header {
 			height: @icon-size;
 			display: inline-block;
 			// icons set
-			.for(length(@socials), @socials);
-			& + * {
-				margin-left: 5px;
-			}
+			.socials(length(@socials), @socials);
+			// & + * {
+				// margin-left: 5px;
+			// }
+			margin: 0 -1px;
 		}
 
 	}
 	.header-warpper {
+		padding: 0 25px;
 		&> * {
 			display: inline-block;
 			vertical-align: middle;
@@ -70,10 +73,13 @@ header {
 	.logo {
 		width: 100px;
 		height: 60px;
+		margin-right: 22px;
 		background: url("@{img-path}logo.svg") 50% 50% no-repeat;		
 		&+span {
 			color: @green;
 			font: bold 22px @font-main;
+			letter-spacing: -1px;
+			margin-right: 45px;
 		}
 	}
 }

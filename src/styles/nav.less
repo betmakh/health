@@ -1,33 +1,142 @@
-.main-nav {
-	background: @green;
-	border-bottom: 3px solid fade(#000, 10%);
-	.nav-wrapper {
-		white-space: nowrap;
-		display: block;
-		display: flex;
+// images
+// @icons-yellow:
+// @icons-white: 
+@import 'icons';
 
-		a {
-			@width: @container-width/5;
-			display: inline-block;
-			width: e('@{width}px');
+.main-nav {
+	@height: 110px;
+	background: @green;
+	position: relative;
+	border-bottom: 3px solid fade(#000, 10%);
+	.container {
+		&:hover {
+			&~.subnav {
+				transform: scaleY(1);
+			}
+		}
+		z-index: 2;
+		position: relative;
+	}
+	.subnav {
+			padding: 25px 0;
+			box-shadow: 1px 2px 10px 0px rgba(66, 53, 39, 0.39);
+			// bottom: -@height;
+			top: 100%;
 			box-sizing: border-box;
-			height: 113px;
-			vertical-align: top;
-			font: bold 13px @font-main;
-			color: #fff;
-			text-decoration: none;
-			padding-top: 44px;
-			text-align: center;
-			transition: color .3s ease;
-			position: relative;
-			img {
+			transition: 0.2s linear;
+			transform: scaleY(0);
+			transform-origin: top center;
+			z-index: 1;
+			left: 0;
+			width: 100%;
+			background: #fff;
+			z-index: 1;
+			position: absolute;
+			&:hover {
+				transform: scaleY(1);
+			}
+			// .separator {
+			// 	position: relative;
+			// 	&:after {
+			// 		position: absolute;
+			// 		content: '';
+			// 		top: 10%;
+			// 		width: 1px;
+			// 		height: 90%;
+			// 		right: 0;
+			// 		background: #e2e2e2;
+			// 	}
+			// }
+			.separator {
 				position: absolute;
-				// height: 24px;
-				top: 20px;
+				width: 1px;
+				height: 60%;
+				top: 23%;
+				min-height: 1px;
+				background: #e2e2e2;
 				left: 0;
 				right: 0;
 				margin: auto;
 			}
+			nav {
+				padding: 0 10px;
+				a {
+					display: block;
+					text-decoration: none;
+					font: 14px @font-main;
+					color: @green;
+					&:hover {
+						color: @orange;
+					}
+					& + a {
+						margin-top: 9px;
+					}
+				}
+			}
+		}
+	.nav-wrapper {
+		white-space: nowrap;
+		display: block;
+		display: flex;
+		position: relative;
+
+		a {
+			display: inline-block;
+		}
+		&>a {
+			@width: @container-width/5;
+			width: e('@{width}px');
+			box-sizing: border-box;
+			height: @height;
+			vertical-align: top;
+			font: bold 13px @font-main;
+			color: #fff;
+			text-decoration: none;
+			padding-top: 63px;
+			text-align: center;
+			transition: color .3s ease;
+			position: relative;
+			background-repeat: no-repeat;
+			background-position: center 33%;
+			&.sun {
+				background-image: url(@sun-white);
+				&:hover {
+					background-image: url(@sun-yellow);
+				}
+			}
+			&.cup {
+				background-image: url(@cup-white);
+				&:hover {
+					background-image: url(@cup-yellow);
+				}
+			}
+			&.chart {
+				background-image: url(@chart-white);
+				&:hover {
+					background-image: url(@chart-yellow);
+				}
+			}
+			&.cross {
+				background-image: url(@cross-white);
+				&:hover {
+					background-image: url(@cross-yellow);
+				}
+			}
+			&.hand {
+				background-image: url(@hand-white);
+				&:hover {
+					background-image: url(@hand-yellow);
+				}
+			}
+			// background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAD2SURBVDjLrdMtT4JRFADgB8cwGERm0+CM2swa6YxMFTPRTaNmZtbqD7C5kalQSUQKSefcHHIsKu8rCNfNm+7Hee4994sQQlliWUsN/CvYs/1VTUupY2Q9HVSFq8UrbNldkHbPeDZlHtTczYGG0Jo186Dt3WEuvGRoqPQb6AsPOdASGtmOLKiYehFOvkfLxnr5w8+CmnDqWVfhc/RaqOa3lAVtUxWXQh3seNX5eQZZ0NfHhpGBIm6Fo2XgXBOcCU0HJu7nb3HRTRcNjDx6s58GqAvhhlRQ0PU0e6GrAccu+AuguCh82QeaWDLLpsRSEKmhq1P6H/ABrzhoWSZS0BMAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTUtMDItMDVUMTE6MzI6NDErMDA6MDDArvhpAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE1LTAyLTA1VDExOjMyOjQxKzAwOjAwsfNA1QAAAABJRU5ErkJggg==");
+			// img {
+			// 	position: absolute;
+			// 	// height: 24px;
+			// 	top: 20px;
+			// 	left: 0;
+			// 	right: 0;
+			// 	margin: auto;
+			// }
 			// svg {
 			// 	// display: block;
 			// 	width: 24px;
@@ -38,14 +147,18 @@
 				color: @yellow;
 			}
 			& + a {
-				// position: relative;
-				// &:after {
-				// 	content:'';
-				// 	position: absolute;
-				// 	width: 1px;
-				// 	height: 
-				// }
-				border-left: 1px solid rgba(255,255,255, 0.3);
+				position: relative;
+				&:after {
+					content:'';
+					position: absolute;
+					width: 1px;
+					height: 68%;
+					background: rgba(255,255,255, 0.3);
+					left: 0px;
+					top: 17%;
+				}
+				// border-left: 1px solid rgba(255,255,255, 0.3);
+
 			}
 		}
 	}

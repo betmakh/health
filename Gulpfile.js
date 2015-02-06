@@ -9,7 +9,8 @@ var gulp          = require('gulp'),
     uglify        = require('gulp-uglify'),
     srcFolder = 'src',
     dstFolder = 'dst',
-    normalize = require('normalize');
+    normalize = require('normalize'),
+    cssBase64 = require('gulp-css-base64');
 
 
 // HTML
@@ -52,6 +53,7 @@ gulp.task('styles', function() {
     .pipe(less())
     .pipe(prefix())
     .pipe(minifyCSS({keepBreaks: true}))
+    .pipe(cssBase64())
     .pipe(gulp.dest(dstFolder + '/styles'))
     .pipe(connect.reload());
 });

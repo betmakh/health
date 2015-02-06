@@ -1,11 +1,28 @@
-.for(@i,@socials) when (@i > 0) {
+.socials(@i,@socials) when (@i > 0) {
   @name: e(extract(@socials, @i));
   &.@{name} {
   	background: url('@{img-path}/socials/@{name}.svg') 50% 50% no-repeat;
   }
-  .for((@i - 1), @socials);
+  .socials((@i - 1), @socials);
 } 
 
+.placeholder(@options) {
+	&::-webkit-input-placeholder {
+		@options();
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+	   @options();  
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+	   @options();  
+	}
+
+	&:-ms-input-placeholder {  
+	   @options();  
+	}
+}
 .upper {
 	text-transform: uppercase;
 }
