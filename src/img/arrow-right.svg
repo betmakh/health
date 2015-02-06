@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="24px" height="33px">
+<filter id="filter0" x="0.00%" y="0.00%" width="100.00%" height="100.00%" filterUnits="objectBoundingBox">
+<feFlood result="coFloodOut" flood-color="rgb(255,255,255)"/>
+<feComposite in="coFloodOut" in2="SourceAlpha" result="coOverlay" operator="atop"/>
+<feComponentTransfer in="coOverlay" result="colorOverlay">
+<feFuncA type="linear" slope="1.00"/>
+</feComponentTransfer>
+<feMerge>
+<feMergeNode in="colorOverlay"/>
+</feMerge>
+</filter>
+<mask id="mask0">
+<image x="0.00" y="0.00" width="24.00" height="33.00" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAhCAAAAADmaTRBAAAABGdBTUEAALGPC/xhBQAAAAJiS0dE
+AP+Hj8y/AAAAv0lEQVQoz2NgAAHdC+YM2ID5u/+fnbCIu377////r0AM8ZBf/0HgbyKaeMrf/1BQ
+hCJe+h8BWpAlpiFJ/J/GjCTTgiyznA1JpghZZhsXkkziXySZI/xIMoG/kGQuiiHJOH1GkrmjgBwo
+r5FknmgjyWg/QZJ5jRykCneQZFCCVOwikgxKkMohu+0dQlz8EnYdijjs0MHhKvM32P3h/AW7z4Nw
+hBWu0MUVH7hiEGec40wlONMV7pSIO+3iTu1Y8wcAdupi5xiI6+gAAAAldEVYdGRhdGU6Y3JlYXRl
+ADIwMTUtMDItMDVUMTU6MzE6MTIrMDA6MDCSKD0FAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE1LTAy
+LTA1VDE1OjMxOjEyKzAwOjAw43WFuQAAAABJRU5ErkJggg=="/>
+</mask>
+<defs>
+<image id="symbol0" x="0.00" y="0.00" width="24.00" height="33.00" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAhCAQAAABpC6MWAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAADoSURB
+VDjLlZUxCsJAEEUfCBY2dtpJrKN1+ogHiHiBgCcIeIOcwSt4A0/gAYy1pV0kTcQiENYighFnNLPT
+/seyM3/+wvvMORHQ+QQUOErCbvIlDxwOR0X0X76meskdjpr4t3xD3ZI3lejy7Ze4qVQDdgrg2NGT
+kVRF9vRlJFGRAwMZiYWHN3VkKCPRR2vblTGSkZBSQS54MhKQK8gVX0Z8rgqSa8b0uCiIaswRmYKo
+xpyoHSsk+Ziz5Yap7Q0zW5cCbpY5LLhbJr2yecnoVuM+GDfOvNPm1DDnEpiTD8zZ2tjClN7Q8X94
+AlwuYudzLGDxAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE1LTAyLTA1VDE1OjMxOjEyKzAwOjAwkig9
+BQAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNS0wMi0wNVQxNTozMToxMiswMDowMON1hbkAAAAASUVO
+RK5CYII="/>
+</defs>
+<g>
+<use xlink:href="#symbol0"/>
+<g mask="url(#mask0)"/>
+<use xlink:href="#symbol0" filter="url(#filter0)"/>
+</g>
+</svg>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="23px" height="23px">
+<filter id="filter0" x="0.00%" y="0.00%" width="100.00%" height="100.00%" filterUnits="objectBoundingBox">
+<feFlood result="coFloodOut" flood-color="rgb(255,255,255)"/>
+<feComposite in="coFloodOut" in2="SourceAlpha" result="coOverlay" operator="atop"/>
+<feComponentTransfer in="coOverlay" result="colorOverlay">
+<feFuncA type="linear" slope="1.00"/>
+</feComponentTransfer>
+<feMerge>
+<feMergeNode in="colorOverlay"/>
+</feMerge>
+</filter>
+<mask id="mask0">
+<image x="0.00" y="0.00" width="23.00" height="23.00" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAAAAADFQYt8AAAABGdBTUEAALGPC/xhBQAAAAJiS0dE
+AP+Hj8y/AAAAiUlEQVQoz5WRwQ3AIAhFSbgZD47gCm7CSC7jLrqFN8ewVKvGtjTpvyjvG/MBgCmq
+BG96cI0bR33hFJqhrGo4pG5gqN24Vxg2vgrkm/ExR296seRKPVXcHsl0zIbZuK9DfnRDxPHi5JED
+MwO+WoA8eQawfIjvpf+/87znF/oV5iPNU5q/tK9fez8AWWaEAKZ8Vp0AAAAldEVYdGRhdGU6Y3Jl
+YXRlADIwMTUtMDItMDVUMTE6MzI6MDkrMDA6MDB3C7j0AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE1
+LTAyLTA1VDExOjMyOjA5KzAwOjAwBlYASAAAAABJRU5ErkJggg=="/>
+</mask>
+<defs>
+<image id="symbol0" x="0.00" y="0.00" width="23.00" height="23.00" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAQAAABKIxwrAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAADzSURB
+VDjLpdM7TsNAEAbgD9sNUQrfAF8hFZyAOmkjkbP4ImkimUNwgvgIdO4SUSMkCssUdqyN4xgFZpud
+/R87mt1hLJYayzEgclOc6HPxBCs2D9O5UhEIZjKzgFwoQ0Gs0JwJrmAJqG0mS361UQ9dWu9Ubq+y
+l0vPkJFYOGj6dbCYujQ9I7eC9Do9H5AbjTwk3HWv9+YLe48XFqUnzDy3aeuRgWrEvQJZmyVW4AMc
+PVy4Hzt89Yfa/9WZX/seB7tI42jr273au60XVY8MZMXEF+uRqDvaWU+UuLYLrW7878NpGs5qP01J
+d/A51S71Cb9xtH8Az9Ry/+vtPw8AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTUtMDItMDVUMTE6MzI6
+MDkrMDA6MDB3C7j0AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE1LTAyLTA1VDExOjMyOjA5KzAwOjAw
+BlYASAAAAABJRU5ErkJggg=="/>
+</defs>
+<g>
+<use xlink:href="#symbol0"/>
+<g mask="url(#mask0)"/>
+<use xlink:href="#symbol0" filter="url(#filter0)"/>
+</g>
+</svg>

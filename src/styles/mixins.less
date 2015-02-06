@@ -1,0 +1,32 @@
+.for(@i,@socials) when (@i > 0) {
+  @name: e(extract(@socials, @i));
+  &.@{name} {
+  	background: url('@{img-path}/socials/@{name}.svg') 50% 50% no-repeat;
+  }
+  .for((@i - 1), @socials);
+} 
+
+.upper {
+	text-transform: uppercase;
+}
+.right {
+	display: block;
+	float: right;
+}
+.left {
+	display: block;
+	float: left;
+}
+.clearfix {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+

@@ -1,0 +1,79 @@
+// img names, and class names
+@socials: 'fb','tw','gplus','linked', 'mail';
+
+header {
+	background: #fff;
+	padding: 36px 0;
+	border-bottom: 3px solid @gray;
+	.clearfix();
+
+	// socials
+
+	.socials {
+
+		@icon-size: 23px;
+		text-align: right;
+		&>* {
+			width: @icon-size;
+			height: @icon-size;
+			display: inline-block;
+			// icons set
+			.for(length(@socials), @socials);
+			& + * {
+				margin-left: 5px;
+			}
+		}
+
+	}
+	.header-warpper {
+		&> * {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		address {
+			color: @green;
+			@icon-size: 27px;
+			.call-icon {
+				display: inline-block;
+				width: @icon-size;
+				height: @icon-size;
+				border-radius: 50%;
+				border: 1px solid @green;
+				margin-right: 13px;
+				border-bottom: none;
+				background: url('@{img-path}phone.svg') 50% 50% no-repeat;
+			}
+			& > * {
+				color: inherit;
+				display: inline-block;
+				vertical-align: middle;
+			}
+			a {
+				text-decoration: none;
+				& > * {
+					font-family: @font-main;
+					// line-height: 24px;
+					font-weight: bold;
+					font-style: normal;
+					display: inline-block;
+					vertical-align: top;
+					font-size: 18px;
+					&:first-child {
+						line-height: 16px;
+						position: static;
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+	.logo {
+		width: 100px;
+		height: 60px;
+		background: url("@{img-path}logo.svg") 50% 50% no-repeat;		
+		&+span {
+			color: @green;
+			font: bold 22px @font-main;
+		}
+	}
+}

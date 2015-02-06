@@ -1,0 +1,52 @@
+footer {
+	@padding: 10px;
+	padding-top: 20px;
+	&>div:not(.copyright) {
+		padding-bottom: 30px;
+	}
+	.copyright {
+		background: #e7f6fa;
+		text-align: center;
+		height: 75px;
+		span {
+			font: 11px/75px @font-main;
+		}
+	}
+	.contact {
+		padding-top: 10px;
+		input {
+			border: 1px solid #d3d3d3;
+			display: block;
+			width: 99%;
+			box-sizing: border-box;
+			margin: auto;
+			margin-bottom: 10px;
+
+		}
+	}
+	.footer-block-header {
+		font: bold 16px @font-main;
+		padding: 10px @padding;
+		display: block;
+		min-height: 40px;
+		box-sizing: border-box;
+		min-width: 1px;
+		white-space: nowrap;
+		border-bottom: 1px solid #F0F0F0;
+	}
+	nav {
+		padding: 10px @padding 0;
+		a {
+			font: 14px @font-main;
+			color: @blue-dark;
+			display: block;
+			text-decoration: none;
+			&:hover {
+				color: lighten(@blue-dark, 10%)
+			}
+			& + a{
+				margin-top: 10px;
+			}
+		}
+	}
+}

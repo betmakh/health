@@ -1,0 +1,94 @@
+@numOfSlides: 4;
+.slider {
+	position: relative;
+	input[type=radio] {
+		// display: none;
+		// &:checked {
+		// 	& ~ .slider-wrapper {
+
+		// 	}
+		// }
+	}
+	.slider-controls {
+		position: absolute;
+		width: 25px;
+		height: 35px;
+		&.right {
+			right: 0;
+			background: url('@{img-path}arrow-right.svg') 50% 50% no-repeat;
+		}
+		&.left {
+			left: 0;
+			background: url('@{img-path}arrow-left.svg') 50% 50% no-repeat;
+		}
+		label[for] {
+			position: absolute;
+			display: block;
+			width: 100%;
+			cursor: pointer;
+			height: 100%;
+			top: 0;
+			left: 0;
+		}
+	}
+	.check(@numOfSlides);
+	.slider-wrapper {
+		height: 250px;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		.slide {
+			transition: all .3s ease-in-out;
+			will-change: transform;
+			position: absolute;
+			width: 100%;
+			top: 0;
+			left: 0;
+			transform: translate3d(-100%, 0,0);
+			img {
+				display: block;
+				width: 100%;
+				height: auto;
+				min-width: 100%;
+			}
+			.caption {
+				position: absolute;
+
+			}
+		}
+	}
+}
+
+.check(@slides) when (@slides > 0) {
+	input[type=radio]:nth-of-type(@{slides}):checked ~ .slider-wrapper {
+		.slide:nth-of-type(@{slides}) {
+			transform: translate3d(0,0,0);
+		}
+	}
+	.slectIndexLeft(@slides);
+	.slectIndexRight(@slides);
+	.check((@slides - 1));
+}
+
+.slectIndexLeft(@current) when (@current > 1) {
+	@new: @current - 1;
+	.slider-wrapper .slider-controls.left {
+		label {
+			z-index: -1;
+			&:nth-of-type(@{new}) {
+				z-index: 10;
+			}
+		}
+	}
+}
+.slectIndexRight(@current) when (@current < @numOfSlides) {
+	@new: @current + 1;
+	.slider-wrapper .slider-controls.right {
+		label {
+			z-index: -1;
+			&:nth-of-type(@{new}) {
+				z-index: 10;
+			}
+		}
+	}
+}
